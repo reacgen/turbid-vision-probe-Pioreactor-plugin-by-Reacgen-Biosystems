@@ -1,0 +1,13 @@
+[Unit]
+Description=Periodically refresh local Turbid Vision Probe network discovery
+
+[Timer]
+OnBootSec=90s
+OnUnitActiveSec=5min
+AccuracySec=15s
+Persistent=true
+Unit=turbidvision-dashboard-discovery.service
+
+[Install]
+WantedBy=timers.target
+

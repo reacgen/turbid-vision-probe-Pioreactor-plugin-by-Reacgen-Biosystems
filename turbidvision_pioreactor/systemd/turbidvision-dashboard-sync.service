@@ -1,0 +1,10 @@
+[Unit]
+Description=Synchronize Turbid Vision Probe dashboard links
+After=network-online.target lighttpd.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/pioreactor.env
+Environment=DOT_PIOREACTOR=/home/pioreactor/.pioreactor
+ExecStart=/opt/pioreactor/venv/bin/python -c "from turbidvision_pioreactor.dashboard_sync import main; main()"

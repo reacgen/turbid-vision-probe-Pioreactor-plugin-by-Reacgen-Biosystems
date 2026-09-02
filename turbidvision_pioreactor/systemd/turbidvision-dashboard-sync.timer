@@ -1,0 +1,13 @@
+[Unit]
+Description=Periodically refresh Turbid Vision Probe dashboard links
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+AccuracySec=15s
+Persistent=true
+Unit=turbidvision-dashboard-sync.service
+
+[Install]
+WantedBy=timers.target
+

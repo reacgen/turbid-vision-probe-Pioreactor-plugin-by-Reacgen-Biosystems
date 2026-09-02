@@ -1,0 +1,10 @@
+build/
+dist/
+dist_phase*/
+*.egg-info/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.build_artifacts_backup*/
+.venv/

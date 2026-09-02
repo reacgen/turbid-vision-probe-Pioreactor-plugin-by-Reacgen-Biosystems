@@ -1,0 +1,5 @@
+# Allow Pioreactor's read-only FastCGI account to request only the two
+# root-owned, fixed-command dashboard refresh services. No arbitrary arguments.
+www-data ALL=(root) NOPASSWD: /usr/bin/systemctl start turbidvision-dashboard-discovery.service
+www-data ALL=(root) NOPASSWD: /usr/bin/systemctl --no-block start turbidvision-dashboard-sync.service
+

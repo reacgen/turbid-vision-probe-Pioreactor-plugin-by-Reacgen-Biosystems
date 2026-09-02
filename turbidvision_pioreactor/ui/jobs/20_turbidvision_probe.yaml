@@ -1,0 +1,21 @@
+---
+display_name: Turbid Vision Probe
+job_name: turbidvision_probe
+subtext: enable_growth_model
+display: true
+source: turbidvision_pioreactor
+description: >
+  The Turbid Vision Probe measures culture density and publishes it through Pioreactor's
+  native OD plots and tables. Its optional onboard model also supplies normalized OD and
+  growth rate, while the plugin preserves experiment normalization across restarts.
+  <a href="/api/turbidvision/dashboard"
+  data-turbidvision-unit="@@PIOREACTOR_UNIT@@"
+  onclick="const d=this.closest('[role=dialog]');const h=d&&d.querySelector('b');const all=h&&h.textContent.trim()==='All assigned & active Pioreactors';const m=window.location.pathname.match(/^\/pioreactors\/([^/]+)/);const u=m?decodeURIComponent(m[1]):(!all?this.dataset.turbidvisionUnit:'');this.href='/api/turbidvision/dashboard'+(u?'?unit='+encodeURIComponent(u):'')"
+  target="_blank" rel="noopener">Open probe dashboard &#8599;</a>
+published_settings:
+  - key: enable_growth_model
+    label: Turbid Vision Growth Model Enabled
+    description: Set enable_growth_model to 1 in Advanced before starting to enable the probe's onboard growth model; use 0 to disable it.
+    type: boolean
+    display: true
+    editable: false

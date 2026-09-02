@@ -1,0 +1,14 @@
+# These are not Python files, so setuptools will not ship them without being
+# told. A wheel that omits ui/jobs/*.yaml installs cleanly and then silently
+# fails to show a card in the Pioreactor UI, which is a miserable thing to debug.
+include turbidvision_pioreactor/additional_sql.sql
+include turbidvision_pioreactor/post_install.sh
+include turbidvision_pioreactor/pre_uninstall.sh
+recursive-include turbidvision_pioreactor/ui *.yaml
+recursive-include turbidvision_pioreactor/lighttpd *.conf
+recursive-include turbidvision_pioreactor/systemd *.service *.timer
+recursive-include turbidvision_pioreactor/sudoers *
+include LICENSE.txt
+include README.md
+include CHANGELOG.md
+recursive-include docs *.md
